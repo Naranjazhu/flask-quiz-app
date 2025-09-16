@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="intro">
+    <h2>Welcome to the Personality Quiz</h2>
+    <p>This short quiz will help you understand whether you lean more toward introversion or extroversion based on your preferences.</p>
+    <p>Answer the three simple questions to discover your result!</p>
+    <a href="{{ url_for('quiz') }}" class="button">Start Quiz</a>
+</section>
+{% endblock %}

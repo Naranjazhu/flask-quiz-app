@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="result">
+    <h2>Your Result</h2>
+    <p class="result-text">{{ result }}</p>
+    <div class="actions">
+        <a href="{{ url_for('quiz') }}" class="button">Take Quiz Again</a>
+        <a href="{{ url_for('all_submissions') }}" class="button">View All Results</a>
+    </div>
+</section>
+{% endblock %}

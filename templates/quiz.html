@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="quiz">
+    <h2>Personality Quiz</h2>
+    <form action="{{ url_for('submit') }}" method="post">
+        {% for question in questions %}
+        <fieldset>
+            <legend>{{ question.text }}</legend>
+            {% for option in question.options %}
+            <div class="radio-option">
+                <input type="radio" id="{{ question.id }}_{{ option.value }}" name="{{ question.id }}" value="{{ option.value }}" required>
+                <label for="{{ question.id }}_{{ option.value }}">{{ option.label }}</label>
+            </div>
+            {% endfor %}
+        </fieldset>
+        {% endfor %}
+        <button type="submit" class="button">Submit Answers</button>
+    </form>
+</section>
+{% endblock %}
